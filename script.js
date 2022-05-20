@@ -59,3 +59,18 @@ const bubbleSort = (arr) => {
   return [...arrCopy];
 };
 CL(bubbleSort([2, 4, 7, 8, 9, 1, 5, 10, 23, 60, 11, 21, 56, 76, 89, 90, 0]));
+/* ----------------------------- Insertion Sort ----------------------------- */
+const insertionSort = (arr) => {
+  const arrLength = arr.length;
+  for (let i = 1; i < arrLength; i++) {
+    const current = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > current) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+    arr[j + 1] = current;
+  }
+  return arr;
+};
+CL(insertionSort([2, 4, 7, 8, 9, 1, 5, 10, 23, 60, 11, 21, 56, 76, 89, 90, 0]));
